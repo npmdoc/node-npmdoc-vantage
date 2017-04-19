@@ -1,0 +1,1307 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/dthree/vantage#readme">vantage (v1.7.0)</a>
+</h1>
+<h4>CLI + SSH + REPL for Node</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.vantage">module vantage</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.vantage">
+            function <span class="apidocSignatureSpan"></span>vantage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.client">
+            function <span class="apidocSignatureSpan">vantage.</span>client
+            <span class="apidocSignatureSpan">(parent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.firewall">
+            function <span class="apidocSignatureSpan">vantage.</span>firewall
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.server">
+            function <span class="apidocSignatureSpan">vantage.</span>server
+            <span class="apidocSignatureSpan">(parent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">vantage.</span>client.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">vantage.</span>firewall.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">vantage.</span>server.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.vantage.client">module vantage.client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.client.client">
+            function <span class="apidocSignatureSpan">vantage.</span>client
+            <span class="apidocSignatureSpan">(parent)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.vantage.client.prototype">module vantage.client.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.client.prototype.connect">
+            function <span class="apidocSignatureSpan">vantage.client.prototype.</span>connect
+            <span class="apidocSignatureSpan">(server, port, options, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.vantage.firewall">module vantage.firewall</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.firewall.firewall">
+            function <span class="apidocSignatureSpan">vantage.</span>firewall
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.vantage.firewall.prototype">module vantage.firewall.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.firewall.prototype._isValidIp">
+            function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>_isValidIp
+            <span class="apidocSignatureSpan">(ip)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.firewall.prototype._rule">
+            function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>_rule
+            <span class="apidocSignatureSpan">(address, mask, rule)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.firewall.prototype.accept">
+            function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>accept
+            <span class="apidocSignatureSpan">(address, mask)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.firewall.prototype.allow">
+            function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>allow
+            <span class="apidocSignatureSpan">(address, mask)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.firewall.prototype.block">
+            function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>block
+            <span class="apidocSignatureSpan">(address, mask)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.firewall.prototype.deny">
+            function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>deny
+            <span class="apidocSignatureSpan">(address, mask)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.firewall.prototype.policy">
+            function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>policy
+            <span class="apidocSignatureSpan">(policy)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.firewall.prototype.reject">
+            function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>reject
+            <span class="apidocSignatureSpan">(address, mask)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.firewall.prototype.reset">
+            function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.firewall.prototype.rules">
+            function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>rules
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.firewall.prototype.valid">
+            function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>valid
+            <span class="apidocSignatureSpan">(ip)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.vantage.server">module vantage.server</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.server.server">
+            function <span class="apidocSignatureSpan">vantage.</span>server
+            <span class="apidocSignatureSpan">(parent)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.vantage.server.prototype">module vantage.server.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.server.prototype.auth">
+            function <span class="apidocSignatureSpan">vantage.server.prototype.</span>auth
+            <span class="apidocSignatureSpan">(middleware, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.server.prototype.hook">
+            function <span class="apidocSignatureSpan">vantage.server.prototype.</span>hook
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.server.prototype.init">
+            function <span class="apidocSignatureSpan">vantage.server.prototype.</span>init
+            <span class="apidocSignatureSpan">(app, options, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.server.prototype.listen">
+            function <span class="apidocSignatureSpan">vantage.server.prototype.</span>listen
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vantage.server.prototype.unhook">
+            function <span class="apidocSignatureSpan">vantage.server.prototype.</span>unhook
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.vantage" id="apidoc.module.vantage">module vantage</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.vantage" id="apidoc.element.vantage.vantage">
+        function <span class="apidocSignatureSpan"></span>vantage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Vantage() {
+
+  var self = this;
+
+  if (!(this instanceof Vantage)) { return new Vantage(); }
+
+  Vorpal.call(this);
+
+  // Banner to display on login to a system. If null,
+  // doesn't display a banner.
+  this._banner = void 0;
+
+  // Vantage client connects to other instances
+  // of Vantage.
+  this.client = new VantageClient(this);
+
+  // Vantage server receives connections from
+  // other vantages. Activated by vantage.listen();
+  this.server = new VantageServer(this);
+
+  // If authentication is used, it is called through this fn.
+  this._authFn = void 0;
+
+  this._initIO();
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.client" id="apidoc.element.vantage.client">
+        function <span class="apidocSignatureSpan">vantage.</span>client
+        <span class="apidocSignatureSpan">(parent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function VantageClient(parent) {
+  this.parent = parent;
+  // Sessions are created when you use
+  // vantage as a client to connect to
+  // other instances of vantage.
+  this.sessions = [];
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.firewall" id="apidoc.element.vantage.firewall">
+        function <span class="apidocSignatureSpan">vantage.</span>firewall
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Firewall() {
+  this._rules = [];
+  this._policy = "ACCEPT";
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.server" id="apidoc.element.vantage.server">
+        function <span class="apidocSignatureSpan">vantage.</span>server
+        <span class="apidocSignatureSpan">(parent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function VantageServer(parent) {
+  if (!(this instanceof VantageServer)) { return new VantageServer(); }
+  this._hooked = false;
+
+  // Sessions are created when you use
+  // vantage externally to remotely connect
+  // to this running instance of vantage.
+  // Every connection (a socket.io connection)
+  // is stored as a Session object.
+  this.sessions = [];
+
+  this.parent = parent;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.vantage.client" id="apidoc.module.vantage.client">module vantage.client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.client.client" id="apidoc.element.vantage.client.client">
+        function <span class="apidocSignatureSpan">vantage.</span>client
+        <span class="apidocSignatureSpan">(parent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function VantageClient(parent) {
+  this.parent = parent;
+  // Sessions are created when you use
+  // vantage as a client to connect to
+  // other instances of vantage.
+  this.sessions = [];
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.vantage.client.prototype" id="apidoc.module.vantage.client.prototype">module vantage.client.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.client.prototype.connect" id="apidoc.element.vantage.client.prototype.connect">
+        function <span class="apidocSignatureSpan">vantage.client.prototype.</span>connect
+        <span class="apidocSignatureSpan">(server, port, options, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (server, port, options, cb) {
+  var self = this;
+
+  return new Promise(function(resolve, reject) {
+
+    // Callback can be passed in the options parameter, if
+    // no options are needed.
+    cb = (_.isFunction(options)) ? options : (cb || function(){});
+    options = (!options || _.isFunction(options)) ? {} : options;
+    options = _.defaults(options, {
+      ssl: false,
+      user: void 0,
+      pass: void 0,
+      pipe: false,
+      sessionId: self.parent.session.id
+    });
+
+    var method = (options.ssl) ? "https" : "http";
+
+    var ssn = self.parent.getSessionById(options.sessionId);
+
+    ssn.log("Connecting to " + server + ":" + port + " using " + method + "...");
+
+    if (!ssn) {
+      throw new Error("vantageClient.connect was called with an invalid Session ID: " + options.sessionId);
+    }
+
+    ssn.client = require("socket.io-client")(method + "://" + server + ":" + port, {
+      "force new connection": true,
+      "forceNew": true,
+      "secure": true,
+      "query": "id=" + self.parent.session.id + "&amp;sessionId=" + options.sessionId,
+      "reconnection": true,
+      "reconnectionDelay": 1000,
+      "reconnectionAttempts": 1
+    });
+
+    ssn.client.on("connect", function() {
+
+      if (!ssn.client) { return; }
+      self.parent.emit("client_connect", this);
+
+      ssn.client.on("vantage-banner-downstream", function(data) {
+        self.parent._proxy("vantage-banner-downstream", "downstream", data).then(function(){
+          if (data.banner) {
+            ssn.log(data.banner);
+          }
+        });
+      });
+
+      ssn.client.on("vantage-keypress-downstream", function(data) {
+        self.parent._proxy("vantage-keypress-downstream", "downstream", data).then(function(){
+          if (data.value !== undefined) {
+            if (_.isArray(data.value)) {
+              self.parent.ui.imprint();
+              ssn.log(data.value);
+            } else {
+              self.parent.ui.redraw(data.value);
+            }
+          }
+        });
+      });
+
+      // Command completion.
+      ssn.client.on("vantage-command-downstream", function(data) {
+        self.parent._proxy("vantage-command-downstream", "downstream", data).then(function(){
+          if (data.completed === true) {
+            data.data = self.parent.util.fixArgsForApply(data.data);
+            if (self.parent._command) {
+              if (self.parent._command.command !== data.command) {
+                console.log("Downstream command does not match stored comand: ", data.command, " -vs -", self.parent._command.command
+);
+              }
+              var name = self.parent._command.command;
+              var res = self.parent._command.resolve;
+              var rej = self.parent._command.reject;
+              var cbk = self.parent._command.callback;
+              delete self.parent._command;
+              self.parent._command = void 0;
+              try {
+                self.parent._queueHandler.call(self.parent);
+              } catch(e) {
+                console.log("Error on vantage command downstream: ", e.stack);
+              }
+
+              if (cbk !== undefined) {
+                self.parent.emit("client_command_executed", { command: name });
+                cbk.apply(null, data.data);
+              } else if (data.error !== undefined &amp;&amp; rej !== undefined) {
+                self.parent.emit("client_command_error", { command: name, error: data.error });
+                try {
+                  rej(data.error);
+                } catch(e) {
+                  console.log("Error calling Promise reject on vantage command downstream: ", e);
+                }
+              } else if (res !== undefined) {
+                self.parent.emit("client_command_executed", { command: name });
+                if (data.error === undefined &amp;&amp; _.isArray(data.data) &amp;&amp; data.data.length === 2) {
+                  data.data.shift();
+                }
+                try {
+                  res.apply(null, data.data);
+                } catch(e) { ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+function isNumber(str) {
+return !isNaN(parseInt(str));
+}
+
+function connect(vantage, server, port, opt) {
+return vantage.<span class="apidocCodeKeywordSpan">connect</span>(server, port, opt).then(function(err) {
+  if (err) {
+    vantage._pause();
+    process.exit(1);
+  } else {
+    if (!vantage.ui.midPrompt()) {
+      vantage._prompt();
+    }
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.vantage.firewall" id="apidoc.module.vantage.firewall">module vantage.firewall</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.firewall.firewall" id="apidoc.element.vantage.firewall.firewall">
+        function <span class="apidocSignatureSpan">vantage.</span>firewall
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Firewall() {
+  this._rules = [];
+  this._policy = "ACCEPT";
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.vantage.firewall.prototype" id="apidoc.module.vantage.firewall.prototype">module vantage.firewall.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.firewall.prototype._isValidIp" id="apidoc.element.vantage.firewall.prototype._isValidIp">
+        function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>_isValidIp
+        <span class="apidocSignatureSpan">(ip)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_isValidIp = function (ip) {
+  return ((/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9
+]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(ip)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var parts = String(address).split("/");
+var subnet = mask || ((parts.length === 2) ? parts[1] : void 0);
+var ip = (parts.length === 2) ? parts[0] : address;
+
+subnet = (subnet === undefined) ? 32 : subnet;
+
+var valid =
+  (!this.<span class="apidocCodeKeywordSpan">_isValidIp</span>(ip)) ? "Invalid IP Address passed: " + ip :
+  (isNaN(subnet)) ? "Invalid subnet mask passed: " + subnet :
+  (subnet &gt; 32) ? "Subnet mask cannot be greater than 32: " + subnet :
+  (subnet &lt; 0) ? "Subnet mask cannot be less than 0: " + subnet :
+  true;
+
+if (valid !== true) {
+  throw new Error(valid);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.firewall.prototype._rule" id="apidoc.element.vantage.firewall.prototype._rule">
+        function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>_rule
+        <span class="apidocSignatureSpan">(address, mask, rule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_rule = function (address, mask, rule) {
+
+  var parts = String(address).split("/");
+  var subnet = mask || ((parts.length === 2) ? parts[1] : void 0);
+  var ip = (parts.length === 2) ? parts[0] : address;
+
+  subnet = (subnet === undefined) ? 32 : subnet;
+
+  var valid =
+    (!this._isValidIp(ip)) ? "Invalid IP Address passed: " + ip :
+    (isNaN(subnet)) ? "Invalid subnet mask passed: " + subnet :
+    (subnet &gt; 32) ? "Subnet mask cannot be greater than 32: " + subnet :
+    (subnet &lt; 0) ? "Subnet mask cannot be less than 0: " + subnet :
+    true;
+
+  if (valid !== true) {
+    throw new Error(valid);
+  }
+
+  this._rules.push({
+    ip: ip,
+    subnet: parseFloat(subnet),
+    rule: rule
+  });
+
+  return this;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {String} address
+* @param {Integer} mask
+* @return {Firewall}
+* @api public
+*/
+
+firewall.accept = function(address, mask) {
+ return this.<span class="apidocCodeKeywordSpan">_rule</span>(address, mask, "ACCEPT");
+};
+
+/**
+* Adds a reject rule.
+*
+* @param {String} address
+* @param {Integer} mask
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.firewall.prototype.accept" id="apidoc.element.vantage.firewall.prototype.accept">
+        function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>accept
+        <span class="apidocSignatureSpan">(address, mask)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">accept = function (address, mask) {
+  return this._rule(address, mask, "ACCEPT");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.firewall.prototype.allow" id="apidoc.element.vantage.firewall.prototype.allow">
+        function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>allow
+        <span class="apidocSignatureSpan">(address, mask)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">allow = function (address, mask) {
+  return this._rule(address, mask, "ACCEPT");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.firewall.prototype.block" id="apidoc.element.vantage.firewall.prototype.block">
+        function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>block
+        <span class="apidocSignatureSpan">(address, mask)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">block = function (address, mask) {
+  return this._rule(address, mask, "REJECT");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.firewall.prototype.deny" id="apidoc.element.vantage.firewall.prototype.deny">
+        function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>deny
+        <span class="apidocSignatureSpan">(address, mask)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deny = function (address, mask) {
+  return this._rule(address, mask, "REJECT");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.firewall.prototype.policy" id="apidoc.element.vantage.firewall.prototype.policy">
+        function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>policy
+        <span class="apidocSignatureSpan">(policy)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">policy = function (policy) {
+
+  if (policy === undefined) { return this._policy; }
+
+  policy = String(policy).toUpperCase();
+  policy = (policy === "ALLOW") ? "ACCEPT" : policy;
+  policy = (policy === "BLOCK") ? "REJECT" : policy;
+  policy = (policy === "DENY") ? "REJECT" : policy;
+
+  if (["ACCEPT", "REJECT"].indexOf(policy) === -1) {
+    throw Error("Invalid firewall policy passed: " + policy);
+  }
+
+  this._policy = policy;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.firewall.prototype.reject" id="apidoc.element.vantage.firewall.prototype.reject">
+        function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>reject
+        <span class="apidocSignatureSpan">(address, mask)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reject = function (address, mask) {
+  return this._rule(address, mask, "REJECT");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.firewall.prototype.reset" id="apidoc.element.vantage.firewall.prototype.reset">
+        function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+  this._rules = [];
+  this._policy = "ACCEPT";
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.firewall.prototype.rules" id="apidoc.element.vantage.firewall.prototype.rules">
+        function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>rules
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rules = function () {
+  return this._rules;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.firewall.prototype.valid" id="apidoc.element.vantage.firewall.prototype.valid">
+        function <span class="apidocSignatureSpan">vantage.firewall.prototype.</span>valid
+        <span class="apidocSignatureSpan">(ip)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">valid = function (ip) {
+
+  var valid;
+
+  var toIPv4 = function(addr) {
+    var parts = String(addr).split(":");
+    return parts[parts.length - 1];
+  };
+
+  var addr =
+    (_.isString(ip)) ? ip :
+    (_.isObject(ip) &amp;&amp; ip.family === "IPv6") ? toIPv4(ip.address) :
+    (_.isObject(ip)) ? ip.address : void 0;
+
+  if (!this._isValidIp(addr)) {
+    throw Error("Invalid IP Address passed to Firewall.prototype._process: " + addr);
+  }
+
+  var matches = [];
+  for (var i = 0; i &lt; this._rules.length; ++i) {
+    var match = (inSubnet.Auto(addr, this._rules[i].ip, this._rules[i].subnet));
+    if (match) {
+      matches.push(this._rules[i]);
+    }
+  }
+
+  if (matches.length === 0) {
+    valid = (this._policy === "ACCEPT") ? true : false;
+    return valid;
+  }
+
+  var pick = matches[0];
+  valid = (pick.rule === "ACCEPT") ? true : false;
+  return valid;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  this._port = options.port;
+  this._logActivity = options.logActivity;
+
+  this.io.set("authorization", function(handshakeData, accept){
+
+var address = handshakeData.connection._peername;
+var valid = self.firewall.<span class="apidocCodeKeywordSpan">valid</span>(address);
+var query = handshakeData._query;
+var id = query.id || void 0;
+var ssnId = query.sessionId || void 0;
+
+// If Vantage has the same unique ID, don't let
+// it connect to itself.
+if (id &amp;&amp; (id === self.parent.session.id)) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.vantage.server" id="apidoc.module.vantage.server">module vantage.server</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.server.server" id="apidoc.element.vantage.server.server">
+        function <span class="apidocSignatureSpan">vantage.</span>server
+        <span class="apidocSignatureSpan">(parent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function VantageServer(parent) {
+  if (!(this instanceof VantageServer)) { return new VantageServer(); }
+  this._hooked = false;
+
+  // Sessions are created when you use
+  // vantage externally to remotely connect
+  // to this running instance of vantage.
+  // Every connection (a socket.io connection)
+  // is stored as a Session object.
+  this.sessions = [];
+
+  this.parent = parent;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.vantage.server.prototype" id="apidoc.module.vantage.server.prototype">module vantage.server.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.server.prototype.auth" id="apidoc.element.vantage.server.prototype.auth">
+        function <span class="apidocSignatureSpan">vantage.server.prototype.</span>auth
+        <span class="apidocSignatureSpan">(middleware, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">auth = function (middleware, options) {
+  middleware = (middleware === "basic") ? basicAuth
+    : middleware
+    ;
+
+  if (!middleware) {
+    this.parent._authFn = void 0;
+  } else if (!_.isFunction(middleware)) {
+    this.parent._authFn = void 0;
+    throw new Error("Invalid middleware string passed into Vantage.auth: " + middleware);
+  } else {
+    var fn = middleware.call(this.parent, this, options);
+    this._authFn = fn;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.server.prototype.hook" id="apidoc.element.vantage.server.prototype.hook">
+        function <span class="apidocSignatureSpan">vantage.server.prototype.</span>hook
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hook = function (fn) {
+  if (this._hooked &amp;&amp; this._unhook !== undefined) {
+    this.unhook();
+  }
+  this._unhook = intercept(fn);
+  this._hooked = true;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+
+this.firewall = new Firewall();
+this.parent.firewall = this.firewall;
+
+this.listen(cb);
+
+this.<span class="apidocCodeKeywordSpan">hook</span>(function(txt) {
+  for (var i = 0; i &lt; self.sessions.length; ++i) {
+    if (self.sessions[i].pipe) {
+      // Inquirer's prompt cleaning seems to randomly
+      // spit ANSI code, causing unwanted extra lines.
+      // So if we just get ANSI, ignore.
+      if (!(txt &amp;&amp; txt.length &gt; 1 &amp;&amp; stripAnsi(txt).length === 0)) {
+        self.parent._send("vantage-stdout-downstream", "downstream", { value: txt, sessionId: self.sessions[
+i].id });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.server.prototype.init" id="apidoc.element.vantage.server.prototype.init">
+        function <span class="apidocSignatureSpan">vantage.server.prototype.</span>init
+        <span class="apidocSignatureSpan">(app, options, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (app, options, cb) {
+  var self = this;
+
+  // If options is a function, we think it's
+  // a callback.
+  cb = (_.isFunction(options)) ? options
+    : (cb || function(){});
+
+  // If a port is passed in instead of options,
+  // accept that by converting it to a filled object.
+  // Otherwise, default to an empty object.
+  options = (options &amp;&amp; _.isFunction(options)) ? {}
+    : (options &amp;&amp; !_.isObject(options) &amp;&amp; !isNaN(options)) ? ({ port: options })
+    : (!options) ? {}
+    : options;
+
+  // If a port was passed as the 'app', assign it
+  // as the port instead.
+  options.port =
+    (app &amp;&amp; !_.isObject(app) &amp;&amp; !isNaN(app)) ? app : options.port;
+
+  // If only a port was passed as the app, make the app
+  // object a blank function.
+  app =
+    (app &amp;&amp; !_.isObject(app) &amp;&amp; !isNaN(app)) ? function(){} : app;
+
+  var appIs =
+    (_.isFunction(app)) ? "callback" :
+    (_.isObject(app) &amp;&amp; _.isFunction(app.callback)) ? "koa" :
+    (_.isObject(app) &amp;&amp; _.isFunction(app.connection)) ? "hapi" :
+    "";
+
+  options = _.defaults(options, {
+    port: 80,
+    ssl: false,
+    logActivity: false
+  });
+
+
+  var appCallback =
+    (appIs === "callback") ? app :
+    (appIs === "koa") ? app.callback() :
+    (appIs === "hapi") ? true :
+    void 0;
+
+  if (!appCallback) {
+    throw new Error("Unsupported HTTP Server passed into Vantage.");
+  }
+
+  if (appIs === "hapi") {
+    this.server = app;
+
+    // Create a connection if none exist.
+    if (this.server.connections.length === 0) {
+      this.server.connection({ port: options.port, labels: "vantage" });
+      this.io = require("socket.io")(this.server.listener);
+    } else if (this.server.connections.length &gt; 1) {
+      // Select a specific connection if more than one exist.
+      this.io = require("socket.io")(this.server.select(options.connectionLabel || "vantage").listener);
+      delete options.connectionLabel;
+    } else {
+      this.io = require("socket.io")(this.server.listener);
+    }
+  } else {
+    var type = (options.ssl) ? "https" : "http";
+    if (type === "http") {
+      this.server = require(type).createServer(appCallback);
+    } else {
+      this.server = require(type).createServer(options, appCallback);
+    }
+    this.io = require("socket.io")(this.server);
+    this.server.listen(options.port);
+  }
+
+  this._port = options.port;
+  this._logActivity = options.logActivity;
+
+  this.io.set("authorization", function(handshakeData, accept){
+
+    var address = handshakeData.connection._peername;
+    var valid = self.firewall.valid(address);
+    var query = handshakeData._query;
+    var id = query.id || void 0;
+    var ssnId = query.sessionId || void 0;
+
+    // If Vantage has the same unique ID, don't let
+    // it connect to itself.
+    if (id &amp;&amp; (id === self.parent.session.id)) {
+      return accept("You can't connect to yourself.", false);
+    }
+    if (_.pluck(self.sessions, "id").indexOf(ssnId) &gt; -1) {
+      return accept("You have already connected to this instance.", false);
+    }
+
+    if (!valid) {
+      return accept("IP Not Allowed: " + address, false);
+    } else {
+      return accept(void 0, true);
+    }
+
+  });
+
+  this.firewall = new Firewall();
+  this.parent.firewall = this.firewall;
+
+  this.listen(cb);
+
+  this.hook(function(txt) {
+    for (var i = 0; i &lt; self.sessions.length; ++i) {
+      if (self.sessions[i].pipe) {
+        // Inquirer's prompt cleaning seems to randomly
+        // spit ANSI code, causing unwanted extra lines.
+        // So if we just get ANSI, ignore.
+        if (!(txt &amp;&amp; txt.length &gt; 1 &amp;&amp; stripAnsi(txt).length === 0)) {
+          self.parent._send("vantage-stdout-downstream", "downstream", { value: txt, sessionId: self.sessions[i].id });
+        }
+      }
+    }
+    return txt;
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.server.prototype.listen" id="apidoc.element.vantage.server.prototype.listen">
+        function <span class="apidocSignatureSpan">vantage.server.prototype.</span>listen
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listen = function (cb) {
+  var self = this;
+  cb = cb || function(){};
+
+  this.io.on("connection", function(socket) {
+
+    var query = socket.handshake.query;
+    var ssn = new self.parent.Session({
+      local: false,
+      parent: self.parent,
+      id: query.sessionId,
+      authenticating: true,
+      authenticated: false,
+      host: socket.handshake.headers.host,
+      address: socket.handshake.address
+    });
+
+    ssn.server = socket;
+    self.sessions.push(ssn);
+
+    // Listens for an event, authenticating
+    // the session first.
+    function on(str, opts, cbk) {
+      cbk = (_.isFunction(opts)) ? opts : cbk;
+      cbk = cbk || function() {};
+      opts = opts || {};
+      ssn.server.on(str, function() {
+        if (!ssn.server || (!ssn.authenticating &amp;&amp; !ssn.authenticated)) {
+          //console.log("Not Authenticated. Closing Session.", ssn.authenticating, ssn.authenticated);
+          self.parent._send("vantage-close-downstream", "downstream", { sessionId: ssn.id });
+          return;
+        }
+        cbk.apply(self, arguments);
+      });
+    }
+
+    on("vantage-keypress-upstream", function(data) {
+      self.parent._proxy("vantage-keypress-upstream", "upstream", data).then(function(){
+        if ((["up", "down", "tab"].indexOf(data.key) &gt; -1)) {
+          var sessn = self.parent.getSessionById(data.sessionId);
+          sessn.getKeypressResult(data.key, data.value, function(err, response) {
+            self.parent._send("vantage-keypress-downstream", "downstream", { value: (err || response), sessionId: sessn.id });
+          });
+        } else {
+          self.parent._histCtr = 0;
+        }
+      });
+    });
+
+    on("vantage-command-upstream", function(data) {
+      self.parent._proxy("vantage-command-upstream", "upstream", data).then(function() {
+        if (data.command) {
+          var response = {
+            command: data.command,
+            completed: true,
+            error: void 0,
+            data: arguments,
+            sessionId: data.sessionId
+          };
+          var execute = function() {
+            return new Promise(function(resolve, reject){
+              var cmd = {
+                command: data.command,
+                args: data.args,
+                resolve: resolve,
+                reject: reject,
+                session: self.parent.getSessionById(data.sessionId),
+                callback: function() {
+                  var args = self.parent.util.fixArgsForApply(arguments);
+                  response.data = args;
+                  if (args[0] !== undefined) {
+                    response.error = args[0] || args[1];
+                  }
+                  self.parent.emit("server_command_executed", response);
+                  self.parent._send("vantage-command-downstream", "downstream", response);
+                }
+              };
+              self.parent._exec(cmd);
+            });
+          };
+          self.parent.emit("server_command_received", {
+            command: data.command
+          });
+
+          try {
+            execute().then(function() {
+              response.data = arguments;
+              self.parent.emit("server_command_executed", response);
+              self.parent._send("vantage-command-downstream", "downstream", response);
+            }).catch(function(error){
+              response.error = error;
+              response.data = void 0;
+              self.parent.emit("server_command_error", response);
+              self.parent._send("vantage-command-downstream", "downstream", response);
+            });
+          } catch(e) {
+            console.log("Error executing remote command: ", e);
+          }
+        }
+      });
+    });
+
+    on("vantage-heartbeat-upstream", function(data) {
+      self.parent._proxy("vantage-heartbeat-upstream", "upstream", data).then(function() {
+        self.parent._send("vantage-heartbeat-downstream", "downstream", {
+          delimiter: self.parent._delimiter,
+          sessionId: ssn.id
+        });
+      });
+    });
+
+    on("vanta ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var type = (options.ssl) ? "https" : "http";
+  if (type === "http") {
+    this.server = require(type).createServer(appCallback);
+  } else {
+    this.server = require(type).createServer(options, appCallback);
+  }
+  this.io = require("socket.io")(this.server);
+  this.server.<span class="apidocCodeKeywordSpan">listen</span>(options.port);
+}
+
+this._port = options.port;
+this._logActivity = options.logActivity;
+
+this.io.set("authorization", function(handshakeData, accept){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vantage.server.prototype.unhook" id="apidoc.element.vantage.server.prototype.unhook">
+        function <span class="apidocSignatureSpan">vantage.server.prototype.</span>unhook
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unhook = function () {
+  if (this._hooked &amp;&amp; this._unhook !== undefined &amp;&amp; this.sessions.length &lt; 1) {
+    this._unhook();
+    this._hooked = false;
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
